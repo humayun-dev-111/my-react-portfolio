@@ -6,6 +6,12 @@ import "aos/dist/aos.css";
 AOS.init();
 
 const Home = () => {
+  const handleDownload = () => {
+    const fileId = "1jjMDEURK7s7RXpCIxC7_ehfLQSiR5BXt";
+    const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+    window.location.assign(downloadUrl);
+  };
+
   return (
     <div className="w-full min-h-screen bg-gray-900 pt-20">
       <div className="container mx-auto text-white flex flex-col md:flex-row gap-10 items-center h-screen overflow-hidden px-8">
@@ -60,6 +66,7 @@ const Home = () => {
               data-aos-duration="1000"
               data-aos="fade-up"
               className="normal-case bg-blue-300 rounded-full hover:scale-105 duration-300"
+              onClick={handleDownload}
             >
               Hire Me
             </Button>

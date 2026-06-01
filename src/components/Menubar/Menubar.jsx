@@ -12,26 +12,10 @@ import { HiDownload } from "react-icons/hi";
 const Menubar = () => {
   const [openNav, setOpenNav] = React.useState(false);
 
-  const handleDownload = async () => {
+  const handleDownload = () => {
     const fileId = "1jjMDEURK7s7RXpCIxC7_ehfLQSiR5BXt";
     const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
-
-    try {
-      const response = await fetch(downloadUrl);
-      const blob = await response.blob();
-      const blobUrl = window.URL.createObjectURL(blob);
-
-      const aTag = document.createElement("a");
-      aTag.href = blobUrl;
-      aTag.setAttribute("download", "Resume_Of_RIEAD_Frontend_Web_Developer.pdf");
-      document.body.append(aTag);
-      aTag.click();
-      aTag.remove();
-
-      window.URL.revokeObjectURL(blobUrl);
-    } catch (error) {
-      window.location.href = downloadUrl;
-    }
+    window.location.assign(downloadUrl);
   };
   React.useEffect(() => {
     window.addEventListener(
