@@ -69,6 +69,8 @@ const Home = () => {
           {/* <Image data-aos-duration="1000" data-aos="fade-up"  width="400" alt="My Photo" height="auto" className="w-full object-cover mt-20" src={MyPhoto}></Image> */}
         </div>
       </div>
+
+      
     </div>
   );
 };
